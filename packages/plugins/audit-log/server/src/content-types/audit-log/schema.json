@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "audit_logs",
+  "info": {
+    "singularName": "audit-log",
+    "pluralName": "audit-logs",
+    "displayName": "Audit Log",
+    "description": "System audit log for tracking content changes"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": "Audit logs for tracking all content operations"
+  },
+  "pluginOptions": {
+    "content-manager": {
+      "visible": false
+    },
+    "content-type-builder": {
+      "visible": false
+    }
+  },
+  "attributes": {
+    "contentType": {
+      "type": "string",
+      "required": true,
+      "configurable": false
+    },
+    "recordId": {
+      "type": "string",
+      "required": true,
+      "configurable": false
+    },
+    "action": {
+      "type": "enumeration",
+      "enum": ["create", "update", "delete", "publish", "unpublish"],
+      "required": true,
+      "configurable": false
+    },
+    "userId": {
+      "type": "integer",
+      "configurable": false
+    },
+    "userName": {
+      "type": "string",
+      "configurable": false
+    },
+    "userEmail": {
+      "type": "string",
+      "configurable": false
+    },
+    "payload": {
+      "type": "json",
+      "configurable": false
+    },
+    "changes": {
+      "type": "json",
+      "configurable": false
+    },
+    "timestamp": {
+      "type": "datetime",
+      "required": true,
+      "configurable": false
+    }
+  }
+}
+

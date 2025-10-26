@@ -1,0 +1,60 @@
+{
+  "name": "@strapi/plugin-audit-log",
+  "version": "5.0.0",
+  "description": "Strapi plugin for automated audit logging of content changes",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": {
+    "name": "Strapi Solutions SAS",
+    "email": "hi@strapi.io",
+    "url": "https://strapi.io"
+  },
+  "maintainers": [
+    {
+      "name": "Strapi Solutions SAS",
+      "email": "hi@strapi.io",
+      "url": "https://strapi.io"
+    }
+  ],
+  "exports": {
+    "./strapi-server": {
+      "types": "./dist/server/src/index.d.ts",
+      "source": "./server/src/index.ts",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/",
+    "strapi-server.js"
+  ],
+  "scripts": {
+    "build": "pack-up build",
+    "clean": "pack-up clean",
+    "lint": "run -T eslint .",
+    "test:unit": "run -T jest",
+    "watch": "pack-up watch"
+  },
+  "dependencies": {
+    "@strapi/utils": "5.0.0",
+    "lodash": "4.17.21"
+  },
+  "devDependencies": {
+    "@strapi/pack-up": "5.0.0",
+    "@strapi/types": "5.0.0"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "name": "audit-log",
+    "displayName": "Audit Log",
+    "description": "Automated audit logging for content changes",
+    "kind": "plugin"
+  }
+}
